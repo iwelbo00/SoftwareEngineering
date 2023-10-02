@@ -8,23 +8,15 @@ class userService {
             username: username,
             passwordHash: password
         }
-        var something = false;
+        var temp;
         await axios.post(USERS_API_BASE_URL + "login", tempUser)
             .then(data => {
-                if (data.status >= 200 && data.status <= 300) {
-                    something = true;
-                } else {
-                    something = false;
-                }
+                temp = data;
             }).catch(error => {
                 console.error("Error:", error);
                 return false;
             });
-        if (something == true) {
-            return true;
-        } else {
-            return false;
-        }
+        return temp;
     }
 
     async registerAccount(user) {
