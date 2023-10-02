@@ -258,7 +258,6 @@ export default {
         setTimeout(() => (this.loading = false), 500);
       } else {
         userService.getUsers(temp, this.password).then((value) => {
-          console.log(value)
           if (value != null) {
             var message = value.data.split(" ");
             if (message[1] === ("Successful")) {
@@ -332,7 +331,7 @@ export default {
       this.transactionHistory = false;
     },
     placeOrder() {
-      console.log(orderService.placeOrder(this.email, this.cart));
+      orderService.placeOrder(this.email, this.cart);
       this.clearCart();
       this.goBackToOrdering();
     },

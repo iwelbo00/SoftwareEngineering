@@ -32,7 +32,7 @@ class orderServce {
                     }
                 }
             }
-            axios.post(ORDERS_API_BASE_URL + "/makeOrder", order).then(
+            axios.post(ORDERS_API_BASE_URL + "makeOrder", order).then(
                 data => {
                     return data;
                 }
